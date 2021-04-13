@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nearby/routes.dart';
 
 void main() {
   runApp(MyApp());
@@ -8,11 +9,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Airports Nearby',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        // This makes the visual density adapt to the platform that you run
+        // the app on. For desktop platforms, the controls will be smaller and
+        // closer together (more dense) than on mobile platforms.
+        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: Text('Flutter Demo Home Page'),
+      initialRoute: '/',
+      onGenerateRoute: RouteGenerator.generateRoute,
     );
   }
 }
