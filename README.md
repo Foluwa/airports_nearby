@@ -16,6 +16,9 @@ For help getting started with Flutter, view our
 samples, guidance on mobile development, and a full API reference.
 
 
+https://blog.devgenius.io/adding-sqlite-db-file-from-the-assets-internet-in-flutter-3ec42c14cd44
+
+
 Airports
 ========
 
@@ -43,3 +46,7 @@ A JSON database of 28828 entries with basic information about nearly every airpo
 ```
 
 Time zones sourced from [TimeZoneDB](https://timezonedb.com).
+
+
+TODO:
+1. For onboarding ui only once https://stackoverflow.com/questions/59241566/flutter-onboarding-screen-only-one-time
