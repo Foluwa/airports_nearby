@@ -4,6 +4,7 @@ class PortModel {
   String iata;
   String name;
   String state;
+  String city;
   String country;
   String elevation;
   String lat;
@@ -18,6 +19,7 @@ class PortModel {
     this.country,
     this.elevation,
     this.lat,
+    this.city,
     this.lon,
     this.tz,
   });
@@ -27,13 +29,14 @@ class PortModel {
     return PortModel(
       key: port['_key'],
       icao: port['icao'],
-      iata: port['icao'],
-      name: port['icao'] ?? '',
-      state: port['icao'],
-      country: port['icao'],
-      elevation: port['icao'],
-      lat: port['icao'],
-      lon: port['icao'],
+      iata: port['iata'],
+      name: port['name'],
+      city: port['city'],
+      state: port['state'],
+      country: port['country'],
+      elevation: port['elevation'],
+      lat: port['lat'],
+      lon: port['lon'],
       tz: port['tz'],
     );
   }

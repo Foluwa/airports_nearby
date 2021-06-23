@@ -44,6 +44,31 @@ class DatabaseService {
     // List<Map> list = await _db.rawQuery(
     //     'SELECT * FROM  "ports" ORDER BY "_key" DESC LIMIT 3 OFFSET 0;');
     return list.map((ports) => PortModel.fromJson(ports)).toList();
+
+    // 'SELECT * FROM ports WHERE country is "NG" ORDER BY "_key" ASC LIMIT 100 OFFSET 0');
+  }
+
+  Future<List<PortModel>> sortbyCountry(String countryCode) async {
+    try {
+      // ...
+      //Handle exception of type SomeException
+      print('COUNTRY CODE IS $countryCode');
+      await initDatabase();
+      List<Map> list = await _db.rawQuery(
+          'SELECT * FROM ports WHERE country is "${countryCode.toUpperCase()}" ORDER BY "_key" ASC LIMIT 100 OFFSET 0');
+      // List<Map> list = await _db.rawQuery(
+      //     'SELECT * FROM  "ports" ORDER BY "_key" DESC LIMIT 3 OFFSET 0;');
+      return list.map((ports) => PortModel.fromJson(ports)).toList();
+
+      // 'SELECT * FROM ports WHERE country is "NG" ORDER BY "_key" ASC LIMIT 100 OFFSET 0');
+    }
+    // on SomeException catch(e) {
+    //
+    // }
+    catch (e) {
+      print('ERROR $e');
+    }
+    //Handle all other exceptions
   }
 
   dispose() {

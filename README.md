@@ -36,3 +36,9 @@ Time zones sourced from [TimeZoneDB](https://timezonedb.com).
 
 TODO:
 1. For onboarding ui only once https://stackoverflow.com/questions/59241566/flutter-onboarding-screen-only-one-time
+
+Countries list
+https://github.com/mhmzdev/Covid19-Tracker-App
+
+Maps
+https://github.com/kerrongordon/covid19
