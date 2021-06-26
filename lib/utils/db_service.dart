@@ -39,8 +39,8 @@ class DatabaseService {
 
   Future<List<PortModel>> getTrails() async {
     await initDatabase();
-    List<Map> list = await _db
-        .rawQuery('SELECT * FROM ports ORDER BY "_key" ASC LIMIT 100 OFFSET 0');
+    List<Map> list = await _db.rawQuery(
+        'SELECT * FROM ports WHERE country is "NG" ORDER BY "_key" ASC LIMIT 100 OFFSET 0');
     // List<Map> list = await _db.rawQuery(
     //     'SELECT * FROM  "ports" ORDER BY "_key" DESC LIMIT 3 OFFSET 0;');
     return list.map((ports) => PortModel.fromJson(ports)).toList();

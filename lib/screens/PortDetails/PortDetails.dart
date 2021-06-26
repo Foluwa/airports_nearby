@@ -27,10 +27,6 @@ class _PortDetailsState extends State<PortDetails> {
       //   backgroundColor: Color(0xff21254A),
       // ),
       appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(Icons.cancel_rounded, color: Colors.pink),
-          onPressed: () => Navigator.of(context).pop(),
-        ),
         title: Text("Airport Details"),
         backgroundColor: Color(0xff21254A),
       ),
@@ -63,6 +59,7 @@ class _PortDetailsState extends State<PortDetails> {
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             color: Colors.black,
+                            fontSize: 20,
                           ),
                         ),
                         Text(
@@ -70,6 +67,7 @@ class _PortDetailsState extends State<PortDetails> {
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             color: Colors.black,
+                            fontSize: 20,
                           ),
                         ),
                       ],
@@ -123,24 +121,24 @@ class _PortDetailsState extends State<PortDetails> {
           body: Stack(
             children: <Widget>[
               FlutterMap(
-                options: new MapOptions(
-                  center: new LatLng(double.parse(widget.portDetails.lat),
+                options: MapOptions(
+                  center: LatLng(double.parse(widget.portDetails.lat),
                       double.parse(widget.portDetails.lon)),
                   zoom: 13.0,
                 ),
                 layers: [
-                  new TileLayerOptions(
+                  TileLayerOptions(
                       urlTemplate:
                           "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
                       subdomains: ['a', 'b', 'c']),
-                  new MarkerLayerOptions(
+                  MarkerLayerOptions(
                     markers: [
-                      new Marker(
+                      Marker(
                         width: 80.0,
                         height: 80.0,
-                        point: new LatLng(double.parse(widget.portDetails.lat),
+                        point: LatLng(double.parse(widget.portDetails.lat),
                             double.parse(widget.portDetails.lon)),
-                        builder: (ctx) => new Container(
+                        builder: (ctx) => Container(
                             child: Icon(
                           Icons.location_on,
                           color: Colors.pink,

@@ -38,7 +38,7 @@ class _PortState extends State<Port> {
         actions: [
           CountryListPick(
             appBar: AppBar(
-              backgroundColor: Colors.amber,
+              backgroundColor: Color(0xff21254A),
               title: Text('Pick your country'),
             ),
             theme: CountryTheme(
@@ -48,7 +48,7 @@ class _PortState extends State<Port> {
               isDownIcon: true,
               showEnglishName: true,
             ),
-            initialSelection: '+1',
+            initialSelection: '+234',
             // or
             // initialSelection: 'US'
             onChanged: (CountryCode code) {
