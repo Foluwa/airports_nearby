@@ -34,17 +34,22 @@ dependencies:
   intl: ^0.15.8
   sliding_up_panel: ^1.0.2
   url_launcher: ^5.4.10
-  flutter_launcher_icons: ^0.7.4
   flag: ^3.2.2
   carousel_slider: ^2.1.0
   font_awesome_flutter: ^8.8.1
-  google_maps_flutter: ^0.5.28+1
   country_icons: ^2.0.2
+  flutter_map: any
 
 
 dev_dependencies:
+  flutter_launcher_icons: "^0.8.0"
   flutter_test:
     sdk: flutter
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icon/icon.png"
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

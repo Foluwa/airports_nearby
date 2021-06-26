@@ -25,7 +25,6 @@ class PortModel {
   });
 
   factory PortModel.fromJson(Map<String, dynamic> port) {
-    print('PORT IS $port');
     return PortModel(
       key: port['_key'],
       icao: port['icao'],

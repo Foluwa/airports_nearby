@@ -30,7 +30,6 @@ class _PortState extends State<Port> {
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
-    print('_countries ${_countries}');
     return Scaffold(
       backgroundColor: Color(0xff21254A),
       appBar: AppBar(
@@ -49,7 +48,7 @@ class _PortState extends State<Port> {
               isDownIcon: true,
               showEnglishName: true,
             ),
-            initialSelection: '+234',
+            initialSelection: '+1',
             // or
             // initialSelection: 'US'
             onChanged: (CountryCode code) {
