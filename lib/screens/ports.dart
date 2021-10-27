@@ -1,10 +1,14 @@
 import 'package:country_list_pick/country_list_pick.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:nearby/models/Port.dart';
-import 'package:nearby/utils/db_service.dart';
+
+import '../models/port.dart';
+import '../utils/constants.dart';
+import '../utils/db_service.dart';
 
 class Port extends StatefulWidget {
+  const Port({Key key}) : super(key: key);
+
   @override
   _PortState createState() => _PortState();
 }
@@ -28,18 +32,18 @@ class _PortState extends State<Port> {
 
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
+    //double width = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: Color(0xff21254A),
+      backgroundColor: Constants.primaryColor,
       appBar: AppBar(
-        backgroundColor: Color(0xff21254A),
-        title: Text('Ports'),
+        backgroundColor: Constants.primaryColor,
+        title: const Text('Ports'),
         actions: [
           CountryListPick(
             appBar: AppBar(
-              backgroundColor: Color(0xff21254A),
-              title: Text('Pick your country'),
+              backgroundColor: Constants.primaryColor,
+              title: const Text('Pick your country'),
             ),
             theme: CountryTheme(
               isShowFlag: true,
@@ -49,14 +53,15 @@ class _PortState extends State<Port> {
               showEnglishName: true,
             ),
             initialSelection: '+234',
-            // or
-            // initialSelection: 'US'
+            // or // initialSelection: 'US'
             onChanged: (CountryCode code) {
-              print(code.name);
-              print(code.code);
-              print(code.dialCode);
-              print(code.flagUri);
-              Future<List<PortModel>> data = dbService.sortbyCountry(code.code);
+              // print(code.name);
+              // print(code.code);
+              // print(code.dialCode);
+              // print(code.flagUri);
+
+              // ignore: lines_longer_than_80_chars
+              final data = dbService.sortbyCountry(code.code);
               setState(() {
                 _countries = data;
               });
@@ -70,25 +75,20 @@ class _PortState extends State<Port> {
             future: _countries,
             builder: (context, snapshot) {
               if (!snapshot.hasData)
-                return Center(
-                  child: CircularProgressIndicator(),
-                );
+                return const Center(child: CircularProgressIndicator());
               return (snapshot.data.isEmpty)
                   ? Center(
-                      child: Text(
-                      'Empty',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                    ))
+                      child: Text('Empty',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Constants.white)))
                   : ListView.builder(
                       itemCount: snapshot.data.length,
                       itemBuilder: (context, index) {
                         return Card(
                           child: GestureDetector(
                             onTap: () {
-                              Navigator.of(context).pushNamed("/port-details",
+                              Navigator.of(context).pushNamed('/port-details',
                                   arguments: snapshot.data[index]);
                             },
                             child: ListTile(
@@ -99,15 +99,14 @@ class _PortState extends State<Port> {
                                 '${snapshot.data[index].name} ${snapshot.data[index].state}',
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
-                                  color: Colors.black,
+                                  color: Constants.black,
                                 ),
                               ),
                               subtitle: Text(
                                   '${snapshot.data[index].city}/${snapshot.data[index].state}/ ${snapshot.data[index].country}',
                                   style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.black,
-                                  )),
+                                      fontWeight: FontWeight.bold,
+                                      color: Constants.black)),
                               trailing:
                                   Icon(Icons.play_arrow, size: height * 0.02),
                             ),
