@@ -12,3 +12,9 @@ https://account.mapbox.com/settings/
 https://pub.dev/packages/flutter_map
 
 [Storing /Users/mac/key.jks]
+
+
+# Todos
+- Open in google maps
+- Rework UI
+-

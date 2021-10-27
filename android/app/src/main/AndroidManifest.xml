@@ -2,7 +2,7 @@
     package="com.example.nearby">
     <uses-permission android:name="android.permission.INTERNET"/>
    <application
-        android:label="nearby"
+        android:label="Airports Nearby"
         android:icon="@mipmap/launcher_icon">
         <activity
             android:name=".MainActivity"
