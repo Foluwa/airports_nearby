@@ -1,8 +1,8 @@
 # Airports nearby
 
-A  Flutter project.
+A Flutter project.
 
-A database of 28828 entries with basic information about nearly every airport and landing strip in the world. ICAO codes used as primary value. Each entry contains IATA code, airport name, city, two letter ISO country code, elevation above sea level in feet, coordinates in decimal degrees and time zone.
+A database of 28828 entries with basic information about nearly every airport and landing strip in the world. ICAO codes used as primary value. Each entry contains IATA code, airport name, city, two letter ISO country code, elevation above sea level in feet, coordinates in decimal degrees and time zone. (Time zones sourced from [TimeZoneDB](https://timezonedb.com)).
 
 ```json
 "KOSH": {
@@ -19,5 +19,11 @@ A database of 28828 entries with basic information about nearly every airport an
 },
 ```
 
-Time zones sourced from [TimeZoneDB](https://timezonedb.com).
+<p float="left">
+  <img src="screenshots/screenshot1.png" width="200" />
+  <img src="screenshots/screenshot2.png" width="200" /> 
+  <img src="screenshots/screenshot1.png" width="200" />
+</p>
+
+
 
