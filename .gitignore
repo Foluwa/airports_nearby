@@ -50,5 +50,5 @@ key.jks
 /assets/key/*
 key.properties
 app/upload-keystore.jks
-TODOS.md
+upload-keystore.jks
 TODOS.md
