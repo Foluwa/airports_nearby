@@ -19,6 +19,7 @@ A database of 28828 entries with basic information about nearly every airport an
 },
 ```
 
+## Screenshots 
 <p float="left">
   <img src="screenshots/screenshot1.png" width="200" />
   <img src="screenshots/screenshot2.png" width="200" /> 
@@ -26,4 +27,7 @@ A database of 28828 entries with basic information about nearly every airport an
 </p>
 
 
-
+## Playstore 
+<p float="left">
+  <a href="https://play.google.com/store/apps/details?id=com.foluwa.airports_nearby"><img src="assets/icon/icons8-google-play.svg" width="200" /></a>
+</p>
