@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 class Constants {
-  static String appName = 'Laundro';
+  static String appName = 'Airports Nearby';
   static bool showDebugBanner = false;
 
   /// COLORS
